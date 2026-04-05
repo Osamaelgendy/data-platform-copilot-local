@@ -78,7 +78,7 @@ The evaluator scores:
 
 ## Notes
 
-- This version is intentionally local-only and easy to demo in interviews.
+- This version is intentionally local-only.
 - It does not require Azure, Foundry, or any external service.
 - The `foundry.py` helper remains as a prompt-shaping example, but it is not used at runtime in this local-only version.
 
