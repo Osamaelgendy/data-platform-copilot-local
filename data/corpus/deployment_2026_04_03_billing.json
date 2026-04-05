@@ -1,0 +1,12 @@
+{
+  "doc_id": "deployment_2026_04_03_billing",
+  "title": "Billing Pipeline Deployment 2026-04-03",
+  "doc_type": "deployment",
+  "date": "2026-04-03",
+  "tags": ["billing", "deployment", "customer_dim", "contract"],
+  "metadata": {
+    "pipeline": "billing_daily",
+    "release": "2026.04.03.2"
+  },
+  "content": "Deployment 2026.04.03.2 updated the billing_daily transform to enforce discount_code normalization before loading billing_fact.\nThe deployment also changed the customer_dim staging model to expect discount_code as a nullable string field.\nRollback guidance: restore the previous customer_dim contract mapping and rerun the billing_daily DAG.\nKnown risk: upstream producers not sending discount_code can cause contract validation failures."
+}

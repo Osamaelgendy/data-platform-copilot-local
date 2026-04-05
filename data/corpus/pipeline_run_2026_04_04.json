@@ -1,0 +1,12 @@
+{
+  "doc_id": "pipeline_run_2026_04_04",
+  "title": "Billing Daily Run Log 2026-04-04",
+  "doc_type": "run_log",
+  "date": "2026-04-04",
+  "tags": ["run_log", "billing", "failure", "warehouse_load"],
+  "metadata": {
+    "dag_id": "billing_daily",
+    "run_id": "scheduled__2026-04-04T01:00:00Z"
+  },
+  "content": "Task extract_promotions succeeded in 7m.\nTask load_customer_dim failed in 4m with error: missing column discount_code in source payload.\nTask load_billing_fact was skipped because upstream dependency failed.\nOperator note: warehouse load validation rejected 8757 records with null contract keys.\nSuggested action from on-call: compare latest deployment changes with the promotions feed contract."
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "case_id": "billing-failure-root-cause",
+    "question": "Why did yesterday's pipeline fail?",
+    "expected_terms": ["discount_code", "schema", "customer_dim", "billing_fact"],
+    "expected_citations": [
+      "incident_2026_04_04_billing_failure",
+      "pipeline_run_2026_04_04"
+    ],
+    "disallowed_terms": ["network outage"]
+  },
+  {
+    "case_id": "latest-quality-summary",
+    "question": "Summarize the latest data quality issues.",
+    "expected_terms": ["billing_fact", "row_count", "customer_dim", "schema drift"],
+    "expected_citations": ["dq_report_2026_week14"],
+    "disallowed_terms": ["warehouse migration"]
+  },
+  {
+    "case_id": "weekly-row-count-mismatches",
+    "question": "Which tables had row-count mismatches this week?",
+    "expected_terms": ["billing_fact", "customer_dim"],
+    "expected_citations": [
+      "audit_extract_2026_04_04",
+      "dq_report_2026_week14"
+    ],
+    "disallowed_terms": ["usage_fact mismatch"]
+  },
+  {
+    "case_id": "billing-deployment-change",
+    "question": "What changed in the billing pipeline after the last deployment?",
+    "expected_terms": ["discount_code", "nullable", "customer_dim", "billing_daily"],
+    "expected_citations": ["deployment_2026_04_03_billing"],
+    "disallowed_terms": ["new streaming job"]
+  }
+]

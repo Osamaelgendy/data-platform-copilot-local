@@ -1,0 +1,12 @@
+{
+  "doc_id": "runbook_billing_daily",
+  "title": "Runbook: billing_daily Pipeline",
+  "doc_type": "runbook",
+  "date": "2026-03-28",
+  "tags": ["runbook", "billing", "dag", "recovery"],
+  "metadata": {
+    "owner": "data-platform",
+    "pipeline": "billing_daily"
+  },
+  "content": "The billing_daily pipeline loads customer_dim, usage_fact, and billing_fact into the warehouse.\nIf customer_dim fails, billing_fact should not run because invoice enrichment depends on discount_code and account attributes.\nCommon failure modes include schema drift in promotions data, timeout during warehouse load, and delayed upstream snapshots.\nRecovery steps: validate upstream contract, rerun customer_dim, and replay billing_fact after row-count checks pass."
+}

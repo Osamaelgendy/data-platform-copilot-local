@@ -1,0 +1,12 @@
+{
+  "doc_id": "incident_2026_04_04_billing_failure",
+  "title": "Incident: Billing Daily Failure on 2026-04-04",
+  "doc_type": "incident",
+  "date": "2026-04-04",
+  "tags": ["incident", "billing", "schema_change", "customer_dim"],
+  "metadata": {
+    "severity": "SEV-2",
+    "status": "resolved"
+  },
+  "content": "The billing_daily DAG failed at 02:14 UTC after the customer_dim load step.\nPrimary trigger: the promotions feed stopped sending discount_code for several enterprise accounts after a schema change.\nDownstream impact: billing_fact load aborted and late-arriving invoices were held in quarantine.\nMitigation: restore the nullable discount_code mapping, backfill customer_dim, and replay billing_daily.\nPost-incident note: row counts recovered after the replay in staging but not yet in production."
+}

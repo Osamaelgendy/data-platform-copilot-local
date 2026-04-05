@@ -1,0 +1,11 @@
+{
+  "doc_id": "dq_report_2026_week14",
+  "title": "Week 14 Data Quality Report",
+  "doc_type": "quality_report",
+  "date": "2026-04-05",
+  "tags": ["quality", "billing", "row_count", "schema_drift"],
+  "metadata": {
+    "reporting_window": "2026-W14"
+  },
+  "content": "Highest-severity issue: billing_fact row_count check failed on 2026-04-04 with a deficit of 8757 rows.\nSecond issue: customer_dim freshness SLA breached by 92 minutes after the overnight load failure.\nThird issue: schema drift detected in the promotions feed where discount_code was missing for a subset of records.\nRecommendation: validate the promotions feed contract before replaying the billing pipeline."
+}

@@ -1,0 +1,12 @@
+{
+  "doc_id": "audit_extract_2026_04_04",
+  "title": "Audit Extract for Billing and Usage Tables",
+  "doc_type": "audit_extract",
+  "date": "2026-04-04",
+  "tags": ["billing", "audit", "row_count", "usage_fact"],
+  "metadata": {
+    "pipeline": "billing_daily",
+    "environment": "prod"
+  },
+  "content": "Audit snapshot for 2026-04-04.\nTable billing_fact row_count_actual=821144 row_count_expected=829901 mismatch=8757.\nTable usage_fact row_count_actual=1198773 row_count_expected=1198773 mismatch=0.\nTable customer_dim row_count_actual=442118 row_count_expected=450000 mismatch=7882.\nAudit note: billing_fact shortfall aligns with records rejected after schema validation failures."
+}
